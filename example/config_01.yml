@@ -1,0 +1,42 @@
+dataSources:
+  - name: train
+    type: local-csv
+    path: train.csv.gz
+    compression: gzip
+
+  - name: test
+    type: local-csv
+    path: train.csv.gz
+    compression: gzip
+
+  - name: labels
+    type: local-csv
+    path: labels.csv
+
+models:
+  - name: p2p-tags-v2
+    type: nlp-st # https://simpletransformers.ai/
+    variant: distilbert
+    task: multilabel
+    params:
+      # EVAL
+      evaluate_during_training: True
+      evaluate_during_training_verbose: True
+      evaluate_during_training_steps: 1000
+      # SAVE
+      save_steps: -1
+      save_eval_checkpoints: False
+      save_model_every_epoch: False
+      save_optimizer_and_scheduler: False
+      # TRAINING:
+      num_train_epochs: 1
+
+pipelines:
+  - name: p2p-tags-v2
+    artifactsPath: ./target
+    train:
+      model: p2p-tags-v2
+      trainDataSource: train
+      testDataSource: test
+      labelsDataSource: labels
+
