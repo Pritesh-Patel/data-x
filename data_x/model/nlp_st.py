@@ -36,6 +36,7 @@ def multilabel(m: Model, out_path_prefix: str, num_of_labels: int, train_df: pd.
 
 
 def not_found():
+    ## TODO: proper error, force quit pipeline
     print('task type not found')
 
 
