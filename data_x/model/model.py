@@ -5,6 +5,7 @@ from . import nlp_st
 
 import pandas as pd
 
+
 def get_model_config(config: DataX, model: str) -> Model:
     for m in config.models:
         if m.name == model:
@@ -15,6 +16,7 @@ def get_model_config(config: DataX, model: str) -> Model:
 
 def not_found():
     print('model type not found')
+
 
 def train(m: Model, out_path_prefix: str, num_of_labels: int, train_df: pd.DataFrame, test_df: pd.DataFrame):
     print('Training model type: {}'.format(m.type))

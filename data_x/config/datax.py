@@ -1,5 +1,10 @@
 
+from marshmallow import fields, post_load
+from .pipeline import PipelineSchema
+from .model import ModelSchema
+from .datasource import DataSourceSchema
 from .camelcase import CamelCaseSchema
+
 
 class DataX:
     def __init__(self, data_sources, models, pipelines):
@@ -7,10 +12,6 @@ class DataX:
         self.models = models
         self.pipeline = pipelines
 
-from marshmallow import fields, post_load
-from .datasource import  DataSourceSchema
-from .model import ModelSchema
-from .pipeline import PipelineSchema
 
 class DataXSchema(CamelCaseSchema):
     data_sources = fields.List(fields.Nested(DataSourceSchema))
