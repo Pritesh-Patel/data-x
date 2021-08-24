@@ -4,5 +4,5 @@ requirements:
 
 install: #TODO better way to install for local dev? 
 	pip install -r requirements.txt
-	pip install .
+	pip install . --ignore-installed PyYAML
 
