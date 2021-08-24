@@ -47,6 +47,6 @@ def get_assembled_pipeline_config(config: DataX, pipeline: str) -> AssembledPipe
 def run_assembled_pipeline(ap: AssembledPipeline):
     train_df = data.load_data_source(ap.train_ds)
     test_df = data.load_data_source(ap.test_ds)
-    labels = data.load_data_source(ap.labels_ds).columns.values.tolist()
+    labels = data.load_data_source(ap.labels_ds)['labels'].values.tolist()
     model_impl = ap.model
     model.train(model_impl, ap.artifacts_path, len(labels), train_df, test_df)

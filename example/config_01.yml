@@ -10,8 +10,8 @@ dataSources:
     compression: gzip
 
   - name: labels
-    type: local-csv
-    path: labels.csv
+    type: local-labels-txt
+    path: labels.txt
 
 models:
   - name: p2p-tags-v2
