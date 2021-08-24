@@ -9,7 +9,10 @@ It works with 3 main 'modules':
 - Pipeline (composed of datasources and a model)
 
 You can see example configuration in the example directory.
+## Pip install
+To install via pip you can clone the directory and run `make -C data-x install` TODO: make installable via git + pip
 
+## Poetry install
 To install first install poetry, clone the repo and run `poetry install` TODO: pip package
 
 Once installed you can use `data-x --help` to explore configured modules and do various tasks
