@@ -3,11 +3,13 @@ dataSources:
     type: local-csv
     path: train.csv.gz
     compression: gzip
+    sampleSize: 2000
 
   - name: test
     type: local-csv
     path: train.csv.gz
     compression: gzip
+    sampleSize: 400
 
   - name: labels
     type: local-labels-txt

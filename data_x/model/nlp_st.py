@@ -3,9 +3,14 @@ from ..config.model import Model
 import torch
 import pandas as pd
 from simpletransformers.classification import MultiLabelClassificationModel
+from ast import literal_eval
 
 
 def multilabel(m: Model, out_path_prefix: str, num_of_labels: int, train_df: pd.DataFrame, test_df: pd.DataFrame,  cuda=torch.cuda.is_available()):
+    #TODO remove once transformation code is implemented expensive
+    train_df['labels'] = train_df['labels'].apply(literal_eval)
+    test_df['labels'] = test_df['labels'].apply(literal_eval)
+    
     MODEL = m.variant
     MODEL_CASE = f'{MODEL}-base-uncased'
     MODEL_ARTIFACT_OUT_PREFIX = f'{out_path_prefix}/{m.name}'
