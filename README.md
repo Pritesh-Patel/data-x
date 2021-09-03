@@ -20,3 +20,6 @@ Once installed you can use `data-x --help` to explore configured modules and do 
 To kick off the pipeline you can use `data-x pipeline run-pipeline ./config.yml  <PIPELINE_NAME>`
 
 TODO: Better README & documentation
+
+## NLP
+Current version includes two types of classification model. Single and Multi label. These can be configured by config.yml by declaring it `task: singlelabel` or `task: multilabel`
