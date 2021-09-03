@@ -19,8 +19,7 @@ models:
   - name: p2p-tags-v2
     type: nlp-st # https://simpletransformers.ai/
     variant: distilbert
-    task: nlp
-    label: single
+    task: singlelabel
     params:
       # EVAL
       evaluate_during_training: True
