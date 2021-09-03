@@ -14,7 +14,6 @@ class Model:
     def __repr__(self):
         return "<Model(name={self.name!r})>".format(self=self)
 
-
 class ModelSchema(CamelCaseSchema):
     # TODO validation
 
